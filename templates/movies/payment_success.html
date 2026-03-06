@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <div class="card shadow p-5">
+        <h1 class="text-success"> Booking Successful!</h1>
+        <p class="lead">Your tickets have been confirmed.</p>
+        <hr>
+        <p>A confirmation email has been sent to <strong>{{ request.user.email }}</strong>.</p>
+        <p>Booked Seats: 
+            {% for seat in booked_seats %}
+                <span class="badge bg-primary fs-6">{{ seat }}</span>
+            {% endfor %}
+        </p>
+        <a href="{% url 'home' %}" class="btn btn-outline-primary mt-3">Back to Home</a>
+    </div>
+</div>
+{% endblock %}
