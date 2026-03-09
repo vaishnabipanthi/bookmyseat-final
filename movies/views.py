@@ -27,6 +27,7 @@ def movie_list(request):
 def home(request):
     movies = Movie.objects.all()
     return render(request, 'home.html', {'movies': movies})
+  
 
 def theater_list(request, movie_id):
     movie = get_object_or_404(Movie,pk=movie_id)

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +62,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 print("REAL PATH IS:", MEDIA_ROOT)
 
 ROOT_URLCONF = 'bookmyseat.urls'
-LOGIN_URL='/login/'
+LOGIN_URL = '/users/login/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -89,6 +90,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 #DATABASES['default'] = dj_database_url.parse('postgresql://django_bookmyshow_bdaa_user:hPtVTWTLLl3BiTKJVAAaKre6lNlIr7ag@dpg-d4ha1gvdiees73bdj75g-a.oregon-postgres.render.com/django_bookmyshow_bdaa')
 
 # Password validation
