@@ -126,8 +126,9 @@ python manage.py runserver 8080
 Static files not loading
 → Run:
 python manage.py collectstatic
-👩‍💻 Author
 
+
+👩‍💻 Author
 Developed by Vaishnabi Panthi
 
 
