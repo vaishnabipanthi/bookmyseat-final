@@ -126,3 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RAZORPAY_KEY_ID = 'rzp_test_YourKeyHere' 
 RAZORPAY_KEY_SECRET = 'YourSecretKeyHere'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+CSRF_TRUSTED_ORIGINS = ['https://bookmyseat-final-production.up.railway.app']
+DEBUG = False
